@@ -1,0 +1,108 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
+          "mindar-image-three": "https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-three.prod.js"
+        }
+      }
+    </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="src/favicon.ico">
+</head>
+
+<body>
+  <!-- Ocultar la UI Original -->
+  <div id="loading-ui" class="custom-loading-ui hidden"></div>
+  <div id="scanning-ui" class="custom-scanning-ui hidden"></div>
+  <!-- Canva -->
+  <div id="container">
+    <!-- Pantalla de carga -->
+    <div class="loading-screen" id="loadingScreen">
+      <div class="loading-spinner"></div>
+      <div class="loading-text" id="loadingText">El Fauno Danzante en Realidad Aumentada</div>
+      <div class="loading-subtext" id="loadingSubtext">Cargando...</div>
+    </div>
+
+    <!-- Overlay negro -->
+    <div id="info-overlay" class="hidden"></div>
+
+    <!-- Panel -->
+    <div id="info-panel" class="hidden">
+      <img src="src/cerrar.png" alt="cierre" id="close-panel">
+      <div class="panel-header">
+        <h2>Fauno</h2>
+      </div>
+      <hr>
+      <h4>Loremp<br>
+        Lorem ipsum dolor<br>
+        Lorem ipsum dolor sit amet<br>
+        Lorem ipsum dolor</h4>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat lorem fermentum enim fermentum fermentum
+        eu id nunc. Praesent hendrerit nibh quis metus pellentesque, fermentum molestie magna egestas. Fusce nisl magna,
+        pharetra volutpat lacinia eu, rutrum quis ex. Ut quis leo vel justo rhoncus congue aliquam sed dolor. Aenean
+        elementum libero et lectus venenatis venenatis. Praesent eget tortor nec enim lacinia eleifend sed quis arcu.
+        Nam accumsan tincidunt massa eget dictum. Nulla sodales elementum bibendum. Suspendisse quis eros fringilla,
+        mattis tellus dapibus, vulputate dui.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat lorem fermentum enim fermentum fermentum
+        eu id nunc. Praesent hendrerit nibh quis metus pellentesque, fermentum molestie magna egestas. Fusce nisl magna,
+        pharetra volutpat lacinia eu, rutrum quis ex. Ut quis leo vel justo rhoncus congue aliquam sed dolor. Aenean
+        elementum libero et lectus venenatis venenatis. Praesent eget tortor nec enim lacinia eleifend sed quis arcu.
+        Nam accumsan tincidunt massa eget dictum. Nulla sodales elementum bibendum. Suspendisse quis eros fringilla,
+        mattis tellus dapibus, vulputate dui.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat lorem fermentum enim fermentum fermentum
+        eu id nunc. Praesent hendrerit nibh quis metus pellentesque, fermentum molestie magna egestas. Fusce nisl magna,
+        pharetra volutpat lacinia eu, rutrum quis ex. Ut quis leo vel justo rhoncus congue aliquam sed dolor. Aenean
+        elementum libero et lectus venenatis venenatis. Praesent eget tortor nec enim lacinia eleifend sed quis arcu.
+        Nam accumsan tincidunt massa eget dictum. Nulla sodales elementum bibendum. Suspendisse quis eros fringilla,
+        mattis tellus dapibus, vulputate dui.
+      </p>
+      <p>
+        Escrito por <b>Eliana Luján Grilotti</b>, estudiante avanzada en Historia de las Artes con orientación en Artes
+        Visuales.
+      </p>
+      <p>
+        Diseñado y desarrollado por <b>Marcos Juárez Agüero</b>, licenciado en Diseño Multimedial.
+      </p>
+    </div>
+
+    <!-- Escaneo -->
+    <div class="scanning-screen" id="scanningScreen">
+      <div class="scanning-frame">
+        <div class="scanning-corners corner-tl"></div>
+        <div class="scanning-corners corner-tr"></div>
+        <div class="scanning-corners corner-bl"></div>
+        <div class="scanning-corners corner-br"></div>
+        <div class="scanning-line"></div>
+      </div>
+      <div class="scanning-text">Apunta hacia el target</div>
+      <div class="target-lost-message" id="targetLostMessage">¡Has perdido el target!</div>
+    </div>
+
+    <!-- Logo -->
+    <a href="https://www2.fba.unlp.edu.ar/areamuseo/" target="_blank" id="logo-link">
+      <img src="src/logo.png" alt="Logo">
+    </a>
+
+    <!-- Info -->
+    <div id="info-button">
+      <img src="src/informacion.png" alt="Info">
+    </div>
+
+    <!-- Tomar captura -->
+    <button id="botonCaptura">Tomar foto</button>
+  </div>
+  <script type="module" src="main.js"></script>
+</body>
+
+</html>
