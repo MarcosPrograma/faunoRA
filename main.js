@@ -25,25 +25,24 @@ const mindarThree = new MindARThree({
 
 const { renderer, scene, camera } = mindarThree;
 
-// Luz ambiental suave con un toque cálido (simula rebote en paredes)
-const ambient = new THREE.AmbientLight(0xf5f5f5, 0.35); 
+// Luz ambiental muy suave, apenas para levantar sombras
+const ambient = new THREE.AmbientLight(0xffffff, 0.5);
 scene.add(ambient);
 
-// Luz direccional principal (ligeramente cálida, como un foco de museo)
-const keyLight = new THREE.DirectionalLight(0xfff8e7, 1.1); 
-keyLight.position.set(3, 8, 5);
+// Key light: blanca-cálida pero más neutra 
+const keyLight = new THREE.DirectionalLight(0xfff9f0, 1);
+keyLight.position.set(4, 7, 5);
 keyLight.castShadow = true;
-keyLight.shadow.bias = -0.0001;
 scene.add(keyLight);
 
-// Luz de relleno fría, más tenue (equilibra el contraste, simula desgaste)
-const fillLight = new THREE.DirectionalLight(0xe0e0e0, 0.35);
-fillLight.position.set(-4, 3, 6);
+// Fill light: casi neutra con apenas calidez
+const fillLight = new THREE.DirectionalLight(0xfefefe, 2);
+fillLight.position.set(-6, 3, 4);
 scene.add(fillLight);
 
-// Luz trasera con tono neutro para resaltar bordes sin brillar demasiado
-const backLight = new THREE.DirectionalLight(0xfafafa, 0.5);
-backLight.position.set(0, 5, -4);
+// Back light: fría y muy baja, para contraste sin teñir demasiado
+const backLight = new THREE.DirectionalLight(0xe8f4ff, 1);
+backLight.position.set(0, 6, -6);
 scene.add(backLight);
 
 //cargar modelo GLTF
