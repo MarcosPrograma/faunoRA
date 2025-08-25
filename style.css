@@ -91,8 +91,7 @@ body {
   backdrop-filter: blur(15px);
   padding-top: 3rem;
   padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 5rem; 
+  padding-right: 20px; 
   z-index: 2001;
   color: white;
   display: none;
@@ -104,7 +103,7 @@ body {
 #info-panel::after {
   content: "";
   display: block;
-  height: 4rem;
+  height: 5rem;
 }
 
 .panel-header {
@@ -132,6 +131,10 @@ body {
 
 #info-panel p {
   margin-bottom: 30px;
+}
+
+#creditos{
+    font-size: 14px;
 }
 
 /*Boton para tomar una fotografía*/
